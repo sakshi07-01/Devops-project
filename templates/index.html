@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Dashboard | Multi-Container Project</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .visitor-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            color: white;
+        }
+
+        .visitor-count {
+            font-size: 5rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .visitor-label {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .status {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .status-badge {
+            background: #f0f0f0;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .status-badge.green {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-badge.blue {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+
+        .status-badge.purple {
+            background: #e7d4f0;
+            color: #6f42c1;
+        }
+
+        .refresh-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 20px;
+        }
+
+        .refresh-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tech {
+            background: #f8f9fa;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐳 DevOps Multi-Container Project</h1>
+        <div class="subtitle">Flask + MySQL + Docker Compose</div>
+
+        <div class="visitor-card">
+            <div class="visitor-label">🌟 Total Visitors</div>
+            <div class="visitor-count">{{count}}</div>
+            <div class="visitor-label">unique visitors</div>
+        </div>
+
+        <div class="status">
+            <div class="status-badge green">
+                🟢 Flask App | Running
+            </div>
+            <div class="status-badge blue">
+                🐬 MySQL | Connected
+            </div>
+            <div class="status-badge purple">
+                🐳 Docker | Multi-Container
+            </div>
+        </div>
+
+        <div class="tech-stack">
+            <span class="tech">Python 3.10</span>
+            <span class="tech">Flask</span>
+            <span class="tech">MySQL 8</span>
+            <span class="tech">Docker Compose</span>
+            <span class="tech">GitHub Actions</span>
+        </div>
+
+        <button class="refresh-btn" onclick="location.reload()">
+            🔄 Refresh to Increase Visitor Count
+        </button>
+
+        <div class="footer">
+            <p>⚡ Each refresh creates a new record in MySQL database</p>
+            <p>📊 CI/CD Pipeline | Automated Builds | GitHub Actions</p>
+        </div>
+    </div>
+</body>
+</html>
