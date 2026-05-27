@@ -64,21 +64,17 @@ Test Flask App - Verifies app responds
 Stop Containers - Cleans up resources
 
 ## Project Structure
-Devops-project/
-├── app.py                 # Flask application with authentication
-├── Dockerfile             # Docker configuration
-├── docker-compose.yml     # Multi-container setup
-├── requirements.txt       # Python dependencies
-├── README.md              # Documentation
-├── templates/
-│   ├── index.html        # Homepage UI
-│   ├── login.html         # Login page
-│   └── register.html      # Registration page
-├── tests/
-│   └── test_app.py       # Unit tests
-└── .github/
-    └── workflows/
-        └── ci.yml        # CI/CD pipeline
+**Root Files:**
+app.py - Flask application with authentication
+Dockerfile - Docker configuration
+docker-compose.yml - Multi-container setup
+requirements.txt - Python dependencies
+README.md - Documentation
+
+**Folders:**
+templates/ - HTML templates (index.html, login.html, register.html)
+tests/ - Unit tests (test_app.py)
+.github/workflows/ - CI/CD pipeline (ci.yml)
 
 ## 📊 Visitor Counter Logic
 Each time you refresh the homepage:
